@@ -94,3 +94,8 @@ Les données sont récupérées en temps réel depuis l'API officielle de la **B
 ### Avertissement
 > Les données présentées sont mises à jour quotidiennement par la BFM.
 > Cette application est un outil d'analyse et ne constitue pas un conseil financier.
+
+---
+**Développeur**: *Dr. Ramanambonona Ambinintsoa*
+**Dernière mise à jour**: 09 juin 2025
+**Données** issues du siteweb de la Banque Centrale de Madagascar
