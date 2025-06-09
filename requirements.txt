@@ -4,4 +4,4 @@ numpy
 requests
 altair
 requests-toolbelt
-xlswriter
+xlsxwriter
