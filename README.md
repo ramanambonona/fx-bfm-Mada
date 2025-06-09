@@ -83,8 +83,7 @@ pip install -r requirements.txt
 ### Exécution
 
 ```bash
-streamlit run fx.py
-```
+streamlit run streamlit_app.py
 
 ### Source des Données
 
