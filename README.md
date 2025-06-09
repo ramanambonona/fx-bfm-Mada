@@ -67,12 +67,12 @@ Elle offre des visualisations interactives et des fonctionnalités d'export de d
 ### Dépendances
 
 ```bash
-streamlit==1.34.0
-pandas==2.2.2
-numpy==1.26.4
-requests==2.31.0
-altair==5.3.0
-requests-toolbelt==1.0.0
+streamlit
+pandas
+numpy
+requests
+altair
+requests-toolbelt
 ```
 
 ### Installation
