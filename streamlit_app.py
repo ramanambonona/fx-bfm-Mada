@@ -109,7 +109,7 @@ with tab1:
     col1, col2 = st.columns(2)
     
     with col1:
-        date_debut = st.date_input("Date de début", datetime.today() - timedelta(days=1800), key="j_date_debut")
+        date_debut = st.date_input("Date de début", datetime.today() - timedelta(days=1826), key="j_date_debut")
     with col2:
         date_fin = st.date_input("Date de fin", datetime.today(), key="j_date_fin")
     
