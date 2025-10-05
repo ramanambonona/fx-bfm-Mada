@@ -471,7 +471,7 @@ with tab2:
                     d_ariary = ariary_variation_pct(start, end)
                     base_txt = label_base_date(df_mensuel.index[0], "M")
 
-                    st.subheader("Appréciation/Dépréciation mensuelle")
+                    st.subheader("Appréciation/Dépréciation")
                     cols = st.columns(3)
                     with cols[0]:
                         st.metric("Début", f"{fmt_mga(start)}/{devise}")
@@ -526,7 +526,7 @@ with tab3:
                     d_ariary = ariary_variation_pct(start, end)
                     base_txt = label_base_date(df_annuel.index[0], "Y")
 
-                    st.subheader("Appréciation/Dépréciation annuelle")
+                    st.subheader("Appréciation/Dépréciation")
                     cols = st.columns(3)
                     with cols[0]:
                         st.metric("Début", f"{fmt_mga(start)}/{devise}")
@@ -576,3 +576,4 @@ st.markdown(
     '<p class="caption">Données fournies par la Banque Foiben\'ny Madagasikara • Mise à jour quotidienne</p>',
     unsafe_allow_html=True
 )
+
