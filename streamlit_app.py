@@ -532,16 +532,33 @@ with tab1:
             combined['Date_Str'] = combined.index.map(format_date_fr)
             
             # Variation sur la période
-            st.subheader("Performance sur la période")
-            cols = st.columns(len(devises))
-            for i, devise in enumerate(devises):
-                start, end, variation = calculate_variation(combined, devise)
-                with cols[i]:
-                    st.metric(
-                        label=f"{devise}",
-                        value=f"{end:,.2f} MGA".replace(',', ' '),
-                        delta=f"{variation:+.2f}%"
-                    )
+            # --- Appréciation/Dépréciation (avec couleur et date de base) ---
+        st.subheader("Appréciation/Dépréciation")
+        
+        # Date de base = première date disponible de la série affichée
+        base_dt = combined.index[0]
+        base_txt = format_date_fr(base_dt)  # ex: 01-janv-24
+        
+        cols = st.columns(len(devises))
+        for i, devise in enumerate(devises):
+            # start/end = taux MGA par 1 unité de la devise (EUR, USD, ...)
+            start, end, _ = calculate_variation(combined, devise)
+        
+            # Variation de l’ARIARY (inverse du taux) :
+            # si le taux MGA/devise baisse => Ariary s'apprécie => % positif
+            if pd.isna(start) or pd.isna(end) or start == 0:
+                d_ariary = 0.0
+            else:
+                d_ariary = ((start - end) / start) * 100  # + vert (apprécie), - rouge (se déprécie)
+        
+            with cols[i]:
+                st.metric(
+                    label=f"{devise} • base {base_txt}",
+                    value=f"{end:,.2f} MGA".replace(',', ' '),
+                    delta=f"{d_ariary:+.2f}%",
+                    delta_color="normal"  # normal => + vert / - rouge
+                )
+
             
             # Graphique
             st.subheader("Évolution du taux de change")
@@ -705,3 +722,4 @@ st.markdown(
     '<p class="caption">Données fournies par la Banque Foiben\'ny Madagasikara • Mise à jour quotidienne</p>',
     unsafe_allow_html=True
 )
+
