@@ -16,7 +16,7 @@
 
 Cette application Streamlit permet d’explorer les cours **MGA par devise**  publiés par la *[Banky Foiben'ny Madagascar](https://www.banky-foibe.mg/marche_marche-de-change)* au format **journalier, mensuel et annuel**, avec un indicateur dédié à l’**Ariary** :
 - **![Ariary](https://img.shields.io/badge/-%2B2.3%25-brightgreen)** : **Ariary s’apprécie** (il faut **moins** de MGA pour 1 unité de devise)
--  **![Ariary](https://img.shields.io/badge/%2B2.3%25-deep%20pink?color=ff1493)** : **Ariary se déprécie** (il faut **plus** de MGA pour 1 unité de devise)
+-  **![Ariary](https://img.shields.io/badge/--2.3%25-ff3b30)** : **Ariary se déprécie** (il faut **plus** de MGA pour 1 unité de devise)
 - La **date de base** (début de période) est **toujours affichée** à côté du libellé.
 Elle offre des visualisations interactives et des fonctionnalités d'export de données pour différentes périodes (journalière, mensuelle, annuelle).
 ---
