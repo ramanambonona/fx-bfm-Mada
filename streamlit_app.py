@@ -141,19 +141,63 @@ a.top-logo {
 }
 a.top-logo img { height: 24px; width: 24px; display:block; }
 
-/* Footer perso (bas-droit) */
+/* Footer perso (bas-centre) */
 .custom-footer {
-  position: fixed; right: 12px; bottom: 10px; z-index: 1001;
+  position: fixed;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+  z-index: 1001;
+
   background: rgba(255,255,255,0.65);
   border: 1px solid rgba(229,229,229,.6);
-  border-radius: 12px; padding: 8px 12px;
-  display: flex; align-items: center; gap: 12px;
-  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+  border-radius: 12px;
+  padding: 8px 12px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
 }
-.custom-footer .footnote { margin: 0; color:#2C2C2C; font-size: 13px; }
-.custom-footer .social { display:flex; align-items:center; gap:8px; }
-.custom-footer .social img { height:18px; width:18px; filter: grayscale(100%); opacity:.85; transition: opacity .2s; }
+
+.custom-footer .footnote {
+  margin: 0;
+  color:#2C2C2C;
+  font-size: 13px;
+  text-align: center;
+}
+
+.custom-footer .social {
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.custom-footer .social img {
+  height:18px;
+  width:18px;
+  filter: grayscale(100%);
+  opacity:.85;
+  transition: opacity .2s;
+}
+
 .custom-footer .social img:hover { opacity:1; }
+
+/* Responsive : garde le footer centré et lisible sur mobile */
+@media (max-width: 640px) {
+  .custom-footer{
+    width: calc(100% - 24px);
+    padding: 8px 10px;
+    bottom: 8px;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+
 </style>
 """, unsafe_allow_html=True)
 
@@ -427,7 +471,7 @@ with tab2:
                     d_ariary = ariary_variation_pct(start, end)
                     base_txt = label_base_date(df_mensuel.index[0], "M")
 
-                    st.subheader("Performance mensuelle")
+                    st.subheader("Appréciation/Dépréciation mensuelle")
                     cols = st.columns(3)
                     with cols[0]:
                         st.metric("Début", f"{fmt_mga(start)}/{devise}")
@@ -482,7 +526,7 @@ with tab3:
                     d_ariary = ariary_variation_pct(start, end)
                     base_txt = label_base_date(df_annuel.index[0], "Y")
 
-                    st.subheader("Performance annuelle")
+                    st.subheader("Appréciation/Dépréciation annuelle")
                     cols = st.columns(3)
                     with cols[0]:
                         st.metric("Début", f"{fmt_mga(start)}/{devise}")
