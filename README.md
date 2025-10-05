@@ -19,6 +19,7 @@ Cette application Streamlit permet d’explorer les cours **MGA par devise**  pu
 -  **![Ariary](https://img.shields.io/badge/--2.3%25-ff3b30)** : **Ariary se déprécie** (il faut **plus** de MGA pour 1 unité de devise)
 - La **date de base** (début de période) est **toujours affichée** à côté du libellé.
 Elle offre des visualisations interactives et des fonctionnalités d'export de données pour différentes périodes (journalière, mensuelle, annuelle).
+**![Ariary](https://img.shields.io/badge/-%2B2.3%25-9e9e9e?style=plastic&labelColor=4a4a4a)**
 ---
 
 ## ⚡ Fonctionnalités clés
